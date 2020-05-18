@@ -27,6 +27,15 @@ const Routes = require('../routes')
  */
 const { Comment, Idea, User } = require('../models')
 
+/**
+ * Repositories
+ */
+const {
+    CommentRepository,
+    IdeaRepository,
+    UserRepository,
+} = require('../repositories')
+
 const contanier = createContainer()
 
 contanier
@@ -50,6 +59,11 @@ contanier
         Comment: asValue(Comment),
         Idea: asValue(Idea),
         User: asValue(User),
+    })
+    .register({
+        CommentRepository: asClass(CommentRepository).singleton(),
+        IdeaRepository: asClass(IdeaRepository).singleton(),
+        UserRepository: asClass(UserRepository).singleton(),
     })
 
 module.exports = contanier
