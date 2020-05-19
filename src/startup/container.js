@@ -9,7 +9,12 @@ const app = require('.')
 /**
  * Services
  */
-const { HomeService } = require('../services')
+const {
+    HomeService,
+    CommentService,
+    IdeaService,
+    UserService,
+} = require('../services')
 
 /**
  * Controllers
@@ -46,6 +51,9 @@ contanier
     })
     .register({
         HomeService: asClass(HomeService).singleton(),
+        CommentService: asClass(CommentService).singleton(),
+        IdeaService: asClass(IdeaService).singleton(),
+        UserService: asClass(UserService).singleton(),
     })
     .register({
         HomeController: asClass(
