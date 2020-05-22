@@ -19,7 +19,12 @@ const {
 /**
  * Controllers
  */
-const { HomeController } = require('../controllers')
+const {
+    HomeController,
+    CommentController,
+    IdeaController,
+    UserController,
+} = require('../controllers')
 
 /**
  * Routes
@@ -58,6 +63,15 @@ contanier
     .register({
         HomeController: asClass(
             HomeController.bind(HomeController)
+        ).singleton(),
+        CommentController: asClass(
+            CommentController.bind(CommentController)
+        ).singleton(),
+        IdeaController: asClass(
+            IdeaController.bind(IdeaController)
+        ).singleton(),
+        UserController: asClass(
+            UserController.bind(UserController)
         ).singleton(),
     })
     .register({
