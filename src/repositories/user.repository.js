@@ -3,7 +3,7 @@ let _user = null
 
 class UserRepository extends BaseRepository {
     constructor({ User }) {
-        super()
+        super(User)
         _user = User
     }
 

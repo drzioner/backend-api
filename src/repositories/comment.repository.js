@@ -3,7 +3,7 @@ let _comment = null
 
 class CommentRepository extends BaseRepository {
     constructor({ Comment }) {
-        super()
+        super(Comment)
         _comment = Comment
     }
 }
