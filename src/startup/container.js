@@ -29,7 +29,12 @@ const {
 /**
  * Routes
  */
-const { HomeRoutes } = require('../routes/index.routes')
+const {
+    HomeRoutes,
+    CommentRoutes,
+    IdeaRoutes,
+    UserRoutes,
+} = require('../routes/index.routes')
 const Routes = require('../routes')
 
 /**
@@ -76,6 +81,9 @@ contanier
     })
     .register({
         HomeRoutes: asFunction(HomeRoutes).singleton(),
+        CommentRoutes: asFunction(CommentRoutes).singleton(),
+        IdeaRoutes: asFunction(IdeaRoutes).singleton(),
+        UserRoutes: asFunction(UserRoutes).singleton(),
     })
     .register({
         Comment: asValue(Comment),
