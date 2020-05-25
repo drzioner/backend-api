@@ -1,1 +1,3 @@
-module.exports = {}
+module.exports = {
+    JwtHelper: require('./jwt.helper'),
+}

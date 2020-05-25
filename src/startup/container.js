@@ -14,6 +14,7 @@ const {
     CommentService,
     IdeaService,
     UserService,
+    AuthService,
 } = require('../services')
 
 /**
@@ -24,6 +25,7 @@ const {
     CommentController,
     IdeaController,
     UserController,
+    AuthController,
 } = require('../controllers')
 
 /**
@@ -34,6 +36,7 @@ const {
     CommentRoutes,
     IdeaRoutes,
     UserRoutes,
+    AuthRoutes,
 } = require('../routes/index.routes')
 const Routes = require('../routes')
 
@@ -64,6 +67,7 @@ contanier
         CommentService: asClass(CommentService).singleton(),
         IdeaService: asClass(IdeaService).singleton(),
         UserService: asClass(UserService).singleton(),
+        AuthService: asClass(AuthService).singleton(),
     })
     .register({
         HomeController: asClass(
@@ -78,12 +82,16 @@ contanier
         UserController: asClass(
             UserController.bind(UserController)
         ).singleton(),
+        AuthController: asClass(
+            AuthController.bind(AuthController)
+        ).singleton(),
     })
     .register({
         HomeRoutes: asFunction(HomeRoutes).singleton(),
         CommentRoutes: asFunction(CommentRoutes).singleton(),
         IdeaRoutes: asFunction(IdeaRoutes).singleton(),
         UserRoutes: asFunction(UserRoutes).singleton(),
+        AuthRoutes: asFunction(AuthRoutes).singleton(),
     })
     .register({
         Comment: asValue(Comment),
